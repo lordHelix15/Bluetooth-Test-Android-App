@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             fragmentLoader(PromptList())
         }
         binding.sendPrompt.setOnClickListener{
-
+            
             fragmentLoader(SendConfirmation())
         }
 
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    fun fragmentLoader(fragLoad: Fragment){
+    private fun fragmentLoader(fragLoad: Fragment){
         val fm = supportFragmentManager
         val ft = fm.beginTransaction()
         ft.replace(R.id.FragLayout, fragLoad)

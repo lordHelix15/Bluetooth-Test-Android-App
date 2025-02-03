@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Bluetooth-Test-Android-App</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Prompts">
+            Prompts To Send To Bluetooth \n\n
+        - Tempset(X) where X is setting Temp \n
+        - ClearLCD() :clears the arduino LCD \n
+        -  \n
+        -  \n
+    </string>
+    <string name="SendConfirmation">
+mnmnmn
+    </string>
 </resources>
