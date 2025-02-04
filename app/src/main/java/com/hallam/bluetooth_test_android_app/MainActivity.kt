@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.service.autofill.OnClickAction
 import android.view.View.OnClickListener
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.hallam.bluetooth_test_android_app.databinding.ActivityMainBinding
@@ -11,17 +12,33 @@ import com.hallam.bluetooth_test_android_app.databinding.FragmentSendConfirmatio
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
-    private lateinit var instructions:Button
+    private lateinit var PromptList:ArrayList<String>
+    private lateinit var fragOpened:String
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-
         binding.instructions.setOnClickListener {
+            var listOfPrompts="List of Usable Prompts"
+
+            for(prompt in PromptList){
+                listOfPrompts+="\n - ${prompt}"
+            }
+
             fragmentLoader(PromptList())
+            fragOpened = "instruction"
+            Toast.makeText(this,fragOpened,Toast.LENGTH_SHORT).show()
         }
         binding.sendPrompt.setOnClickListener{
-            
-            fragmentLoader(SendConfirmation())
+            //
+            if(binding.textInputEditText.getText().toString()==""){
+                Toast.makeText(this,"Propmt Input has an invalid Prompt Please Look at the Prompts in the @string/instructBtn",Toast.LENGTH_SHORT).show()
+
+            }
+
+            fragOpened = "sendPrompt"
+            Toast.makeText(this,fragOpened,Toast.LENGTH_SHORT).show()
+
+            //if(binding.textInputEditText.text)
         }
 
         super.onCreate(savedInstanceState)

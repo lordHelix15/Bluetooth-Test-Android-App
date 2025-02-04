@@ -1,5 +1,7 @@
 <resources>
+
     <string name="app_name">Bluetooth-Test-Android-App</string>
+
     <string name="Prompts">
             Prompts To Send To Bluetooth \n\n
         - Tempset(X) where X is setting Temp \n
@@ -7,7 +9,16 @@
         -  \n
         -  \n
     </string>
+
     <string name="SendConfirmation">
 mnmnmn
+    </string>
+
+    <string name="instructBtn">
+        Instructions/Prompts
+    </string>
+
+    <string name="sendPrompt">
+        Send Prompt
     </string>
 </resources>
