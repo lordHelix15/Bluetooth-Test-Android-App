@@ -67,7 +67,6 @@ class MainActivity : AppCompatActivity() {
     }
     //Setting the promptList so the user able to send the prompt to the bluetooth module that is connected to the Arduino.
     // Bluetooth Module: HC-05 chip
-
     private fun setPromptList(){
         promptsList.add("startTimer()")
         promptsList.add("clearLCD()")
