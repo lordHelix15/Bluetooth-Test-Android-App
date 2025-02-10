@@ -38,14 +38,14 @@
         android:layout_marginBottom="32dp"
         android:text="Enter The Prompt To Send To The Bluetooth"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
+        app:layout_constraintBottom_toTopOf="@+id/inputPrompt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.988" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
+        android:id="@+id/inputPrompt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Prompt"
