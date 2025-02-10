@@ -13,12 +13,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var promptsList:ArrayList<String>
     private lateinit var fragOpened:String
 
-    override fun onStart(){
-        setPromptList()
-        super.onStart()
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        setPromptList()
+        fragOpened = ""
+
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         binding.instructions.setOnClickListener {
@@ -40,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         binding.sendPrompt.setOnClickListener{
             //
             var promptSent=""
-            val userInput = binding.textInputEditText.getText().toString()
+            val userInput = binding.inputPrompt.getText().toString()
             if(userInput==""){
                 Toast.makeText(this,"Prompt Input has an invalid Prompt Please Look at the Prompts in the @string/instructBtn",Toast.LENGTH_SHORT).show()
             }else{
@@ -62,23 +61,26 @@ class MainActivity : AppCompatActivity() {
             fragOpened = "sendPrompt"
             Toast.makeText(this,fragOpened,Toast.LENGTH_SHORT).show()
 
-            //if(binding.textInputEditText.text)
         }
-
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
     }
+    //Setting the promptList so the user able to send the prompt to the bluetooth module that is connected to the Arduino.
+    // Bluetooth Module: HC-05 chip
 
     private fun setPromptList(){
         promptsList.add("startTimer()")
         promptsList.add("clearLCD()")
+        promptsList.add("cycleEndCharacter")
+        //promptsList.add("")
+
     }
-    /*
+
     private fun resetPromptList(){
         promptsList.clear()
         setPromptList()
     }
-     */
+
     //Load Fragments
     private fun fragmentLoader(fragLoad: Fragment){
         val fm = supportFragmentManager

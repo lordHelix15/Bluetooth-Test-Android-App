@@ -6,6 +6,7 @@
     tools:context=".PromptList">
 
     <TextView
+        android:id="@+id/promptList"
         android:textAlignment="center"
         android:textSize="20dp"
         android:layout_width="match_parent"
