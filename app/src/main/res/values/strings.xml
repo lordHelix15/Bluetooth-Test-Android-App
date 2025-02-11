@@ -9,7 +9,9 @@
         -  \n
         -  \n
     </string>
-
+    <string name="argumentKey">
+        promptList
+    </string>
     <string name="SendConfirmation">
 mnmnmn
     </string>
